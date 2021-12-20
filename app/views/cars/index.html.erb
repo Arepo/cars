@@ -9,6 +9,8 @@
     </tr>
   </thead>
 
+  <p><%= link_to 'Price descending', cars_path(price: :desc) %></p>
+  <p><%= link_to 'Price ascending', cars_path(price: :asc) %></p>
   <tbody>
     <% @cars.each do |car| %>
       <tr>

@@ -1,6 +1,9 @@
 class Car < ApplicationRecord
   belongs_to :car_model
 
+  scope :price_asc, -> { order(price_value: :asc) }
+  scope :price_desc, -> { order(price_value: :desc) }
+
   serialize :colours, Array
   enum range_unit: [:km, :miles]
 

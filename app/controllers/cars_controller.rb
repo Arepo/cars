@@ -3,7 +3,15 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    @cars = Car.all
+
+    @cars = case params[:price]
+    when 'desc'
+      Car.price_desc
+    when 'asc'
+      Car.price_asc
+    else
+      Car.all
+    end
   end
 
   # GET /cars/1 or /cars/1.json
