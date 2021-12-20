@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Run `rails db:migrate`
 
-Things you may want to cover:
+Run `bin/rails db:seed`
 
-* Ruby version
+Run `rails s`
 
-* System dependencies
+For a list of cars, visit http://localhost:3000/cars
 
-* Configuration
+You can see a page for each car by clicking the `show` link under any given one
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can search by Make name, and order by price asc/desc (but there's a bug that prevents doing both or searching after ordering)
