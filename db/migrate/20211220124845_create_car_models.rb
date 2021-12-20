@@ -5,7 +5,7 @@ class CreateCarModels < ActiveRecord::Migration[6.1]
       t.timestamps
       t.belongs_to :make
       t.string :name
-      t.text :colours
+      t.text :colours, default: [].to_yaml
     end
   end
 end

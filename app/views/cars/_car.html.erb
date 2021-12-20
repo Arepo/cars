@@ -3,5 +3,9 @@
 <%= car.price %>
 <p><%= "Range: #{car.range}" %></p>
 <p><%= "Colours:"%></p>
-
+<ul>
+<% car.colours.each do |colour| %>
+  <li><%= colour %></li>
+<% end %>
+</ul>
 <%= image_tag(car.photo) %>

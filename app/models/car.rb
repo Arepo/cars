@@ -3,7 +3,8 @@ class Car < ApplicationRecord
 
   scope :by_make, ->(make) do
     if make
-      joins(car_model: :make).where(make: {name: make.titleize})
+      joins(car_model: :make).
+        where("makes.name LIKE :query", query: "%#{sanitize_sql_like(make)}%")
     else
       all
     end
@@ -15,8 +16,6 @@ class Car < ApplicationRecord
       all
     end
   end
-
-  serialize :colours, Array
   enum range_unit: [:km, :miles]
 
   def range

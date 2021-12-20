@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_12_20_124845) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "make_id"
     t.string "name"
-    t.text "colours"
+    t.text "colours", default: "--- []\n"
     t.index ["make_id"], name: "index_car_models_on_make_id"
   end
 
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_12_20_124845) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.text "colours"
   end
 
 end

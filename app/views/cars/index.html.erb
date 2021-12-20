@@ -21,8 +21,6 @@
       <tr>
         <td><%= render 'car', car: car %></td>
         <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,3 @@
 
 <br>
 
-<%= link_to 'New Car', new_car_path %>
