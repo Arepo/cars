@@ -10,25 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_20_120143) do
+ActiveRecord::Schema.define(version: 2021_12_20_124845) do
 
-  create_table "cars", force: :cascade do |t|
+  create_table "car_models", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "range"
-    t.integer "price"
+    t.integer "make_id"
+    t.string "name"
+    t.text "colours"
+    t.index ["make_id"], name: "index_car_models_on_make_id"
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.integer "car_model_id"
     t.string "photo"
     t.integer "range_value"
     t.integer "range_unit"
     t.integer "price_value"
     t.string "price_currency"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_model_id"], name: "index_cars_on_car_model_id"
   end
 
   create_table "makes", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "car_id"
-    t.integer "model"
+    t.string "name"
     t.text "colours"
     t.index ["car_id"], name: "index_makes_on_car_id"
   end

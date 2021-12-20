@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= @car.price %>
-<p><%= "Range: #{@car.range}" %></p>
+<%= render 'car', car: @car %>
+
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>

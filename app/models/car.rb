@@ -1,6 +1,7 @@
 class Car < ApplicationRecord
-  has_one :make
+  belongs_to :car_model
 
+  serialize :colours, Array
   enum range_unit: [:km, :miles]
 
   def range
@@ -9,5 +10,9 @@ class Car < ApplicationRecord
 
   def price
     "#{price_currency}#{price_value}"
+  end
+
+  def colours
+    car_model.colours
   end
 end
