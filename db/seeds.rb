@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-tesla = Make.create(name: 'Tesla')
-merc = Make.create(name: 'Mercedes Benz')
-audi = Make.create(name: 'Audi')
+tesla = Make.create!(name: 'Tesla')
+merc = Make.create!(name: 'Mercedes Benz')
+audi = Make.create!(name: 'Audi')
 
 
 x = CarModel.create(name: 'Model X', make: tesla, colours: ['blue', 'black'])

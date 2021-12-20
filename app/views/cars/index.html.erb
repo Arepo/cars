@@ -9,6 +9,11 @@
     </tr>
   </thead>
 
+  <%= form_with url: "/cars", method: :get do |form| %>
+    <%= form.label :query, "Search for:" %>
+    <%= form.text_field :query %>
+    <%= form.submit "Search" %>
+  <% end %>
   <p><%= link_to 'Price descending', cars_path(price: :desc) %></p>
   <p><%= link_to 'Price ascending', cars_path(price: :asc) %></p>
   <tbody>

@@ -1,8 +1,20 @@
 class Car < ApplicationRecord
   belongs_to :car_model
 
-  scope :price_asc, -> { order(price_value: :asc) }
-  scope :price_desc, -> { order(price_value: :desc) }
+  scope :by_make, ->(make) do
+    if make
+      joins(car_model: :make).where(make: {name: make.titleize})
+    else
+      all
+    end
+  end
+  scope :price_ordered, ->(direction) do
+    if direction
+      order(price_value: direction)
+    else
+      all
+    end
+  end
 
   serialize :colours, Array
   enum range_unit: [:km, :miles]

@@ -36,10 +36,8 @@ ActiveRecord::Schema.define(version: 2021_12_20_124845) do
   create_table "makes", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "car_id"
     t.string "name"
     t.text "colours"
-    t.index ["car_id"], name: "index_makes_on_car_id"
   end
 
 end
